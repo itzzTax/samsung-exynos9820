@@ -26,9 +26,9 @@ jobs:
           set -e -o pipefail
           ./cruelbuild config                    \
                        model=${{ matrix.model }} \
-                       name="Cruel-v4.2"         \
+                       name="Sheepa Kernal 4.2"  \
                        toolchain=$TOOLCHAIN      \
-                       +magisk                   \
+                       -magisk                   \
                        +nohardening              \
                        +ttl                      \
                        +wireguard                \
@@ -38,6 +38,7 @@ jobs:
                        +force_dex_wqhd           \
                        +morosound                \
                        +boeffla_wl_blocker       \
+                       +fp_boost                 \
           2>&1 | tee config.info
 
       - name: Install gcc-aarch64-linux-gnu
